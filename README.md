@@ -17,13 +17,11 @@ Tabel ini menyimpan data pembalap Formula 1 yang terdaftar.
 | Field           | Tipe Data    | Constraint   | Keterangan                                                   |
 |-------          |-----------   |------------  |------------                                                  |
 | `id`            | INT(11)      | PRIMARY KEY  | ID PRIMARY KEY unik dengan AUTO_INCREMENT                    |
-| `nama`          | VARCHAR(100) | NOT NULL     | Nama pembalap                                                |
-| `tim`           | VARCHAR(100) | NULL         | Nama tim pembalap                                            |
-| `negara`        | VARCHAR(50)  | NULL         | Negara asal pembalap                                         |
-| `poinMusim`     | INT(11)      | DEFAULT 0    | Poin perolehan pembalap pada musim ini                       |
-| `jumlahMenang`  | INT(11)      | DEFAULT 0    | Jumlah menang yang diraih pembalap pada musim ini            |
-| `created_at`    | TIMESTAMP    | DEFAULT NOW  | Waktu data dibuat                                            |
-| `updated_at`    | TIMESTAMP    | DEFAULT NOW  | Waktu data terakhir diupdate                                 |
+| `nama`          | VARCHAR(255) | NOT NULL     | Nama pembalap                                                |
+| `tim`           | VARCHAR(255) | NOT NULL         | Nama tim pembalap                                            |
+| `negara`        | VARCHAR(255)  | NOT NULL         | Negara asal pembalap                                         |
+| `poinMusim`     | INT(11)      | NULL    | Poin perolehan pembalap pada musim ini                       |
+| `jumlahMenang`  | INT(11)      | NULL    | Jumlah menang yang diraih pembalap pada musim ini            |
 
 #### 2. Tabel: `grandprix`
 Tabel ini menyimpan data Grand Prix yang diselenggarakan.
@@ -31,12 +29,10 @@ Tabel ini menyimpan data Grand Prix yang diselenggarakan.
 | Field           | Tipe Data    | Constraint    | Keterangan                                             |
 |-------          |-----------   |------------   |------------                                            |
 | `id`            | INT(11)      | PRIMARY KEY   | ID PRIMARY unik grandprix dengan AUTO_INCREMENT        |
-| `nama_gp`       | VARCHAR(100) | NOT NULL      | Nama Grand Prix                                        |
-| `tahun`         | INT(11)      | NOT NULL      | Tahun Grand Prix diadakan                              |
-| `tanggal`       | DATE         | NULL          | Tanggal Grand Prix diadakan                            |
-| `keterangan`    | TEXT         | NULL          | Deskripsi Grand Prix                                   |
-| `created_at`    | TIMESTAMP    | DEFAULT NOW   | Waktu data dibuat                                      |
-| `updated_at`    | TIMESTAMP    | DEFAULT NOW   | Waktu data terakhir diupdate                           |
+| `nama_gp`       | VARCHAR(255) | NOT NULL      | Nama Grand Prix                                        |
+| `tahun`         | INT(4)       | NOT NULL      | Tahun Grand Prix diadakan                              |
+| `tanggal`       | DATE         | NOT NULL          | Tanggal Grand Prix diadakan                            |
+| `keterangan`    | VARCHAR(255) | NULL          | Deskripsi Grand Prix                                   |
 
 ## MVP (Model-View-Presenter)   
 
@@ -239,4 +235,5 @@ Terdapat navbar yang mengandung 2 link yang bisa ditekan oleh user:
 
 
 https://github.com/user-attachments/assets/8af9df9d-4872-4867-8a00-63e3073e512d
+
 
