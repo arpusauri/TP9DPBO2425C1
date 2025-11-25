@@ -236,3 +236,7 @@ Terdapat navbar yang mengandung 2 link yang bisa ditekan oleh user:
 6. Redirect ke `index.php?nav=grandprix`
 
 # Dokumentasi
+
+
+https://github.com/user-attachments/assets/8af9df9d-4872-4867-8a00-63e3073e512d
+
