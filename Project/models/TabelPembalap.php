@@ -19,23 +19,28 @@ class TabelPembalap extends DB implements KontrakModel {
 
     // Method untuk mendapatkan pembalap berdasarkan ID
     public function getPembalapById($id): ?array {
-        $this->executeQuery("SELECT * FROM pembalap WHERE id = :id", ['id' => $id]);
-        $results = $this->getAllResult();
-        return $results[0] ?? null;
+        $query = "SELECT * FROM pembalap WHERE id = ?";
+        $this->executeQuery($query, [$id]);
+        $result = $this->getAllResult();
+        return $result ? $result[0] : null;
     }
 
-    // implementasikan metode CRUD di bawah ini sesuai kebutuhan
-
+    // Method untuk menambah pembalap
     public function addPembalap($nama, $tim, $negara, $poinMusim, $jumlahMenang): void {
-        // ini isi ga ya mas 
+        $query = "INSERT INTO pembalap (nama, tim, negara, poinMusim, jumlahMenang) VALUES (?, ?, ?, ?, ?)";
+        $this->executeQuery($query, [$nama, $tim, $negara, $poinMusim, $jumlahMenang]);
     }
-    
+
+    // Method untuk mengupdate pembalap
     public function updatePembalap($id, $nama, $tim, $negara, $poinMusim, $jumlahMenang): void {
-        // hayo isi ga
+        $query = "UPDATE pembalap SET nama = ?, tim = ?, negara = ?, poinMusim = ?, jumlahMenang = ? WHERE id = ?";
+        $this->executeQuery($query, [$nama, $tim, $negara, $poinMusim, $jumlahMenang, $id]);
     }
-    
+
+    // Method untuk menghapus pembalap
     public function deletePembalap($id): void {
-        // isi ga ya 
+        $query = "DELETE FROM pembalap WHERE id = ?";
+        $this->executeQuery($query, [$id]);
     }
 
 }
